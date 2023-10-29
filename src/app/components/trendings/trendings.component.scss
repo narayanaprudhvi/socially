@@ -1,0 +1,22 @@
+.trendings-Main {
+  overflow-y: scroll !important;
+  position: sticky;
+  top: 100px;
+  height: 600px;
+  .h1-div {
+    position: sticky !important;
+    top: 0;
+  }
+  .trending-news {
+
+    border-radius: 10px;
+    // box-shadow: 0px 0px 61px -25px rgba(0, 0, 0, 0.12);
+    .trending-imgg {
+      margin-top: 10px;
+      width: 100%;
+    }
+    &:nth-child(n + 2) {
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<main class="messages_main">
+  <section class="back_white py-3 br20">
+      <div class="container">
+      <div class="container">
+        <div class="d-flex justify-content-between pointer">
+          <div class="backTo_home d-flex align-items-center"
+            [routerLink]="'/home'">
+            <img class="pointer" src="../../../assets/images/arrow_back.svg"
+              alt="back" />
+            <h1 class="ms-3 fw600 fs12 grey">Back to Home</h1>
+          </div>
+          <button type="button" class="pink_btn"> New Conversation </button>
+        </div>
+      </div>
+
+
+    <section class="conv_cards_main mt-3">
+      <div class="back_white br8 p24 conv-card-one">
+        <div class="col-md-3 d-flex ms-auto searchBar relative">
+          <input type="text" class="w-100" name="messageSearch"
+            placeholder="Search" [(ngModel)]="messageSSearch" />
+          <img class="absolute" src="../../../assets/images/search.svg" alt="search" />
+        </div>
+        <div class="all_conversations mt-4"
+          *ngIf="(messages | filter: messageSSearch).length > 0; else noResults">
+          <ul
+            *ngFor="let x of messages | filter : messageSSearch; let i = index">
+            <li class="d-flex align-items-center pointer"
+              [ngClass]="{ 'active': i === activeIndex }"
+              (click)="activeIndex = i">
+              <div
+                class="single_conversation d-flex align-items-center justify-content-between">
+                <p class="fw500 fs14 conv-letter-pic"
+                  [ngStyle]="{ 'background-color': customColors[i % customColors.length] }">
+                  {{x.name | slice:0:1 }} </p>
+              </div>
+              <div class="col-md-10 ms-3 single_conv_data p8">
+                <h1 class="fw500 fs12"> {{x.name}} </h1>
+                <p class="grey fw400 fs12 mt-3"> {{x.message}} </p>
+              </div>
+            </li>
+            <div class="border-bottom my-3"></div>
+          </ul>
+        </div>
+        <ng-template #noResults>
+          <p class="text-center fw500 fs14 blue-color mt-4">
+            No Records Found</p>
+        </ng-template>
+      </div>
+    </section>
+  </div>
+</section>
+</main>

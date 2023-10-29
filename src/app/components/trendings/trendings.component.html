@@ -1,0 +1,15 @@
+<main class="trendings-Main back_white p32 br32">
+  <div class="h1-div">
+    <h1 class="fw700 fs24">Trending</h1>
+  </div>
+  <div style="background:#fff; position: relative;">
+  <ng-container *ngFor="let x of newsArray; let i = index">
+    <section class="trending-news p10 back_pink pointer mt-3" (click)="goToArticles(i)">
+      <!-- [routerLink]="'/articles'" -->
+      <p class="white fw500 fs14 lh20">{{ x.title }}</p>
+      <img class="trending-imgg" [src]="x.urlToImage" alt="source image" />
+    </section>
+  </ng-container>
+</div>
+
+</main>

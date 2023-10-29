@@ -1,0 +1,48 @@
+.conv_cards_main {
+  .conv-card-one {
+    .all_conversations {
+      // border-bottom: 1px solid  rgba(107, 117, 134, 0.10);
+      li {
+        border-radius: 8px;
+        padding: 16px 30px;
+        &.active{
+          background: #f0f5fa;
+        }
+        &:hover {
+          background: #f0f5fa;
+        }
+        .single_conversation {
+          .conv-letter-pic {
+            padding: 8px 10px;
+            background: pink;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+          }
+        }
+        // .single_conv_data {
+        //   p {
+        //     white-space: nowrap;
+        //     overflow: hidden;
+        //     text-overflow: ellipsis;
+        //     max-width: 222px;
+        //   }
+        // }
+      }
+    }
+  }
+  .conv-card-two {
+    height: 650px;
+    overflow-y: scroll;
+    .mail_message_card {
+      border: 1px solid rgba(107, 117, 134, 0.3);
+    }
+    &::-webkit-scrollbar{
+      width: 8px;
+    }
+    .big_single_conversationCard{
+      border: 1px solid rgba(107, 117, 134, 0.3);
+
+    }
+  }
+}

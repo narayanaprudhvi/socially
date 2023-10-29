@@ -1,0 +1,224 @@
+<main class="profile_main back_white br20 p32">
+  <div class="pointer pink justify-content-between d-md-flex align-items-center">
+    <div class="d-md-flex"  [routerLink]="'/home'">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 1024 1024"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill="#d885a3"
+        d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+      />
+      <path
+        fill="#d885a3"
+        d="m237.248 512l265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+      />
+    </svg>
+    <span class="fs18 fw500 ms-2"> Home </span>
+  </div>
+  <div>
+    <ul class="profile_navigation d-md-flex">
+      <li class="profile_nav_links br8 pointer" (click)="onClick(3)" [ngClass]="{ active: tab === 'tab3' }"> Profile
+      </li>
+      <li class="profile_nav_links br8 pointer" (click)="onClick(1)" [ngClass]="{ active: tab === 'tab1' }"> Edit Profile
+      </li>
+      <li class="profile_nav_links br8 pointer" (click)="onClick(2)" [ngClass]="{ active: tab === 'tab2' }">
+       Change Password </li>
+
+    </ul>
+  </div>
+  </div>
+
+    <div class="mt-4">
+      <div class="profile_card box-shadow back_white br8">
+        <div class="profile_picc d-flex justify-content-center">
+          <div class="text-center">
+            <img src="../../../assets/images/profile-pic-2.svg" alt="profile pic" />
+            <h1 class="fw500 fs24 mt-3"> Narayana Prudhvi </h1>
+          </div>
+        </div>
+
+      </div>
+      <div class="profile_Form_card box-shadow back_white br8 p24">
+        <ng-container *ngIf="profileUserDetails">
+          <form [formGroup]="profileUserDetailsForm">
+            <div class="row">
+              <div class="d-flex g8 align-items-baseline">
+              <h1 class="my-1 fw700 fs24"> Hi  </h1>
+                <div class="loading">
+                <span class="loading__dot"></span>
+                <span class="loading__dot"></span>
+                <span class="loading__dot"></span>
+              </div>
+            </div>
+              <div class="mt-3"> Myself<span class="pink profileDetailsNames"> Narayana Prudhvi </span> </div>
+              <div class="mt-3"> My dears called me as <span class="pink profileDetailsNames"> NP </span> </div>
+              <div class="mt-3"> I'm from <span class="pink profileDetailsNames"> Srikalahasti </span> </div>
+              <div class="mt-3"> Currently i'm living in <span class="pink profileDetailsNames"> Bangalore </span> </div>
+              <div class="mt-3"> My profession <span class="pink profileDetailsNames"> Angular Developer </span> </div>
+              <div class="mt-3"> My hobbies <span class="pink profileDetailsNames"> Programming, Travelling, Reading Books </span> </div>
+              <div class="mt-3"> Interested in <span class="pink profileDetailsNames"> Female </span> </div>
+              <div class="pink-border mt-3">
+              <div class="pink fw500 fs16"> Brief about me </div>
+              <p class="grey lh22 fs14 fw400 mt-2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil vitae nesciunt nostrum in illo a placeat tempore reprehenderit laborum dolor ipsam voluptate, animi temporibus error, expedita harum earum odio velit? </p>
+            </div>
+          </div>
+          </form>
+
+        </ng-container>
+      </div>
+    </div>
+
+        <ng-container *ngIf="eidtProfileForm">
+          <div class="d-flex align-items-center p12 border-bottom">
+            <img src="../../../assets/images/user.svg" alt="user" />
+            <h1 class="fw500 fs16 ms-2"> Edit Profile </h1>
+          </div>
+
+          <!-- profile form -->
+          <form [formGroup]="profileForm">
+            <div class="row">
+              <div class="col-md-6 input-two mt-4">
+                <label class="col-md-12"> First Name </label>
+                <input type="text" formControlName="firstName" placeholder="Enter first name" class="w-100" />
+              </div>
+
+              <div class="col-md-6 input-two mt-4">
+                <label class="col-md-12"> Last Name </label>
+                <input type="text" formControlName="lasstName" placeholder="Enter last name" class="w-100" />
+              </div>
+
+              <div class="col-md-6 input-two mt-5">
+                <label class="col-md-12"> Nick Name </label>
+                <input type="text" formControlName="nicckName" placeholder="Enter nick name" class="w-100" />
+              </div>
+
+              <!-- <div class="ng-select-two col-md-6 mt-5">
+                <label class="col-md-12"> Mobile Number </label>
+                <div class="d-flex align-items-baseline mobile-input-brr mobile-code-select">
+                  <ng-select style="width:90px; margin-top: 8px;" [items]="FamilyInfoMobileCode" bindLabel="name" bindValue="id"
+                    [(ngModel)]="selectedFamilyInfoMobileCode" formControlName="profileMobileCodee"
+                    placeholder="+91"></ng-select>
+                  <input type="text" formControlName="profileMobileNumber" placeholder="Enter mobile number"
+                    class="w-100 input-twoo" onkeypress="return /[0-9]/i.test(event.key)"
+                    oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';" />
+                </div>
+              </div> -->
+
+              <div class="col-md-6 input-two mt-5">
+                <label class="col-md-12"> Email </label>
+                <input type="text" formControlName="profileEmail" placeholder="Enter email" class="w-100" />
+              </div>
+
+              <div class="col-md-6 input-two mt-5">
+                <label class="col-md-12"> Country </label>
+                <input type="text" formControlName="profileCountry" placeholder="Enter country" class="w-100" />
+              </div>
+
+              <div class="col-md-6 input-two mt-5">
+                <label class="col-md-12"> City </label>
+                <input type="text" formControlName="profileCity" placeholder="Enter city" class="w-100" />
+              </div>
+
+              <div class="figma_calender_input mt-5 col-md-6">
+                <label class="col-md-12"> Date Of Birth </label>
+                <p-calendar [(ngModel)]="profileDOB" [showIcon]="true" formControlName="profileDOB"
+                  placeholder="Select date of birth"></p-calendar>
+              </div>
+
+              <div class="ng-select-two mt-5 col-md-6">
+                <label class="col-md-12 mb-2"> Gender </label>
+                <ng-select [items]="selectedProfileGender" bindLabel="name" bindValue="id"
+                  [(ngModel)]="selectedProfileGenderr" formControlName="selectedProfileGenderrr"
+                  placeholder="Select gender"></ng-select>
+              </div>
+
+              <div class="col-md-6 input-two mt-5">
+                <label class="col-md-12"> Profession </label>
+                <input type="text" formControlName="profileProfession" placeholder="Enter profession" class="w-100" />
+              </div>
+
+              <div class="ng-select-two mt-5 col-md-6">
+                <label class="col-md-12 mb-2"> Interested in </label>
+                <ng-select [items]="selectedProfileInterestedd" bindLabel="name" bindValue="id"
+                  [(ngModel)]="selectedProfileInterested" formControlName="selectedProfileINterested"
+                  placeholder="Interested in"></ng-select>
+              </div>
+
+              <div class="profile_buttons mt-5 g24 d-flex align-items-center">
+                <button class="pink_border_btn" type="button"> Edit </button>
+                <button class="pink_btn p12-32" type="button" (click)="profileSubmitted()" [disabled]="profileForm.invalid"> Submit </button>
+              </div>
+
+
+            </div>
+          </form>
+        </ng-container>
+        <!-- profile form -->
+
+        <ng-container *ngIf="showPasswordForm">
+
+          <div class="d-flex align-items-center p12 border-bottom">
+            <img src="../../../assets/images/forgot-Password.svg" alt="user" />
+            <h1 class="fw500 fs16 ms-2"> Change Password </h1>
+          </div>
+
+          <form [formGroup]="profilePasswordForm">
+
+            <div class="col-md-12 input-two mt-4 relative">
+              <label class="col-md-12"> Old Password </label>
+              <input [type]="passwordType ? 'password' : 'text' " formControlName="OldPassword"
+                placeholder="Enter old password" class="w-100" [(ngModel)]="profile.oldPassword" />
+              <div class="eyes-part absolute pointer">
+                <img *ngIf="eyesoffOne" src="../../../assets/images/eye-off.svg" alt="eyes off"
+                  (click)="showPassword('one')" />
+                <img *ngIf="!eyesoffOne" src="../../../assets/images/eye-on.svg" alt="eyes on"
+                  (click)="showPassword('one')" />
+              </div>
+            </div>
+
+            <div class="col-md-12 input-two mt-4 relative">
+              <label class="col-md-12"> New Password </label>
+              <input [type]="passwordTypeTwo ? 'password' : 'text' " formControlName="NewPassword"
+                placeholder="Enter new password" class="w-100" [(ngModel)]="profile.newPassword"
+               (keyup)="notsameNewOldPasswords()" />
+              <div class="eyes-part absolute pointer">
+                <img *ngIf="eyesoffTwo" src="../../../assets/images/eye-off.svg" alt="eyes off"
+                  (click)="showPassword('two')" />
+                <img *ngIf="!eyesoffTwo" src="../../../assets/images/eyes-on.svg" alt="eyes on"
+                  (click)="showPassword('two')" />
+              </div>
+              <p class="error mt-3 lh22" *ngIf="sameOldNewPassword"> The old password and new password should not be same </p>
+            </div>
+
+            <div class="col-md-12 input-two mt-4 relative">
+              <label class="col-md-12"> Confirm New Password </label>
+              <input [type]="passwordTypeThree ? 'password' : 'text' " formControlName="ConfirmNewPassword"
+                placeholder="Enter new password" class="w-100" [(ngModel)]="profile.confirmNewPassword"
+                (keyup)="hideShowCpasswordError()" />
+              <div class="eyes-part absolute pointer">
+                <img *ngIf="eyesoffThree" src="../../../assets/images/eye-off.svg" alt="eyes off"
+                  (click)="showPassword('three')" />
+                <img *ngIf="!eyesoffThree" src="../../../assets/images/eye-on.svg" alt="eyes on"
+                  (click)="showPassword('three')" />
+              </div>
+              <p class="error mt-3 lh22" *ngIf="confirmPasswordError"> Please enter same passwords in above 'New Password'
+                and 'Confirm New Password' fields </p>
+            </div>
+
+            <button class="mt-4 pink_btn" type="button" (click)="savePasswords()"
+            [disabled]="profilePasswordForm.invalid || sameOldNewPassword || confirmPasswordError"> Save </button>
+
+
+          </form>
+        </ng-container>
+
+
+
+
+
+</main>
+
+<p-toast></p-toast>

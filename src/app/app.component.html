@@ -1,0 +1,54 @@
+<!--
+<app-login *ngIf="!showMenu"></app-login>
+
+<div class="wrapper" *ngIf="showMenu">
+  <router-outlet></router-outlet>
+  <app-header></app-header>
+
+<div class="d-md-flex justify-content-between">
+  <div class="col-md-3 br32 back_white height-fit">
+    <app-side-nav></app-side-nav>
+  </div>
+  <div class="back_white br32 col-md-5 p32">
+  </div>
+  <div class="col-md-3 br32 back_white height-fit trending-component">
+    <app-trendings></app-trendings>
+  </div>
+</div>
+
+
+<app-footer></app-footer>
+</div> -->
+
+<div *ngIf="showHeader" style="position: sticky; top: 0; z-index: 999">
+  <app-header></app-header>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
+
+<div class="" style="background: #f3f6fd">
+  <div class="container-fluid">
+    <div class="d-flex">
+      <ng-container *ngIf="showHeader">
+      <div
+        class="sideee-navv sticky-side-nav col-md-2 br20 height-fit"
+        style="background: #fff"
+      >
+        <app-side-nav></app-side-nav>
+      </div>
+    </ng-container>
+      <div class="mainn-layoutt d-flex" [ngClass]="{container: !showFooter}">
+        <app-main-layout></app-main-layout>
+      <ng-container *ngIf="showFooter">
+        <div class="col-md-3" >
+        <app-trendings></app-trendings>
+      </div>
+    </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="showFooter">
+  <!-- Include your footer component here -->
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,160 @@
+.app {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    background-color: #f3f6fd;
+    z-index: 9999 !important;
+
+    &-left,
+    &-right {
+      display: flex;
+      align-items: center;
+    }
+
+    &-left {
+      flex-grow: 1;
+    }
+
+    &-right button {
+      margin-left: 10px;
+    }
+  }
+}
+
+.search-wrapper {
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 10px 20px;
+  // padding-right: 12px;
+  // height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 6px 0 rgba(136, 148, 171, 0.2),
+    0 24px 20px -24px rgba(71, 82, 107, 0.1);
+  overflow: hidden;
+
+  .dark & {
+    box-shadow: none;
+  }
+}
+
+.search-input {
+  border: none;
+  flex: 1;
+  outline: none;
+  height: 100%;
+  padding: 0 20px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #1f1c2e;
+
+  &:placeholder {
+    color: #1f1c2e;
+    opacity: 0.6;
+  }
+}
+
+.notification-btn {
+  color: #1f1c2e;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-btn {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  border-left: 2px solid #ddd;
+
+  &:hover{
+    .logout-button{
+      display: block;
+    }
+  }
+  img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
+
+  span {
+    color: #1f1c2e;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    width: max-content !important;
+  }
+  .logout-button {
+    top: 32px;
+    left: 0;
+    display: none;
+  }
+}
+
+.page-content {
+  flex: 1;
+  width: 100%;
+}
+
+// @media screen and (max-width: 980px) {
+
+// }
+
+// @media screen and (max-width: 880px) {
+
+// }
+
+// @media screen and (max-width: 720px) {
+
+// }
+
+@media screen and (max-width: 520px) {
+  .app-header {
+    padding: 16px 10px;
+  }
+
+  .search-input {
+    max-width: 120px;
+  }
+
+  .profile-btn img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .app-header {
+    padding: 10px;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
+  .messages-btn {
+    top: 48px;
+  }
+}
+.cross-span {
+  span {
+    content: "\274C";
+  }
+}

@@ -1,0 +1,56 @@
+<div class="login_mainn">
+  <div class="col-md-10">
+    <div class="card auth">
+      <div class="card-body auth-card">
+        <div class="auth-avatar">
+          <img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png" alt="user" class="user-image">
+        </div>
+        <form [formGroup]="loginForm" *ngIf="firstLoginForm">
+          <div class="form-group">
+            <label for="email">Email : </label>
+            <input type="text" name="logineemail" class="form-control" placeholder="Email" [(ngModel)]="loginEmail"
+            formControlName="myEmail">
+          </div>
+          <div class="form-group">
+            <label for="password">Password : </label>
+            <input type="password" name="loginppassword" class="form-control" placeholder="Password" [(ngModel)]="loginPassword"
+            formControlName="myPassword">
+            <div class="text-right forget-pass">
+              <a >Forget Password ?</a>
+            </div>
+          </div>
+          <div class="text-center mb-3">
+            <button type="submit" class="btn btn-myy" >
+              <img class="google_icon" src="../../../assets/images/google-icon.png" alt=""> </button>
+              <button type="submit" class="btn btn-my ml-3" (click)="login()"> Login </button>
+
+            </div>
+            <button type="submit" class="btn btn-my d-flex justify-content-center mx-auto my-3" (click)="loginWithOTP()"> Login with OTP </button>
+          </form>
+
+          <form *ngIf="otpForm">
+            <div class="form-group">
+              <label for="email">Mobile Number </label>
+              <input type="text" name="loginMobilee" class="form-control" placeholder="Enter mobile number" [(ngModel)]="loginMobilee"
+              formControlName="myEmail">
+            </div>
+            <button type="submit" class="btn btn-my my-3" (click)="getOtp()"> Get Otp </button>
+
+            <div class="form-group">
+              <label for="email">Validate OTP </label>
+              <input type="text" name="loginMobilee" class="form-control" placeholder="Validate otp" [(ngModel)]="loginValidateOtp"
+              formControlName="myEmail">
+            </div>
+            <button type="submit" class="btn btn-my my-3" (click)="ValidateOtp()"> Validate Otp </button>
+
+          </form>
+
+        <div class="text-center sign-up">
+          Don`t have an account ? <a routerLink="/sign-up">Sign Up</a> here.
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

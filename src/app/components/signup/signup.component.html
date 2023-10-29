@@ -1,0 +1,98 @@
+<main class="signup_main">
+  <div class="login_form container login_margin">
+    <div class="col-md-12 login_form_card back_white br40 d-md-flex align-items-center g100">
+      <div class="col-md-6">
+        <div class="logo">
+          <h1 class="pink fs36 fw600"> Logo </h1>
+          <p class="black fw400 fs16 my-4"> Welcome back !!! </p>
+          <h1 class="fs56 fw600 black mt-4"> Signup Here </h1>
+        </div>
+        <div class="login_form_inputs mt-3">
+          <form [formGroup]="signupForm" (ngSubmit)="onSignupSubmit()">
+            <div class="col-md-12 input-groupp">
+              <label class="col-md-12 mt-4"> Full Name <span class="error"> * </span> </label>
+              <input type="email" id="fullName" formControlName="fullName" class="col-md-12 mb-2" placeholder="Enter full name" required>
+              <div class="error" *ngIf="signupForm.get('fullName')?.invalid && (signupForm.get('fullName')?.dirty || signupForm.get('fullName')?.touched)">
+                <div class="error" *ngIf="signupForm.get('fullName')?.errors?.['required']">Full name is required.</div>
+                <!-- <div class="error" *ngIf="signupForm.get('email')?.errors?.['email']">Invalid email format.</div> -->
+              </div>
+            </div>
+            <div class="col-md-12 input-groupp mt-4">
+              <label class="col-md-12"> Email <span class="error"> * </span> </label>
+              <input type="email" id="email" formControlName="email" class="col-md-12 mb-2" placeholder="Enter email" required>
+              <div class="error" *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)">
+                <div class="error" *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</div>
+                <div class="error" *ngIf="signupForm.get('email')?.errors?.['email']">Invalid email format.</div>
+              </div>
+            </div>
+            <div class="col-md-12 input-groupp mt-4">
+              <label class="col-md-12"> Mobile Number <span class="error"> * </span> </label>
+              <input type="text" id="mobileNumber" formControlName="mobileNumber" class="col-md-12 mb-2" placeholder="Enter mobile number" required>
+              <div class="error" *ngIf="signupForm.get('mobileNumber')?.invalid && (signupForm.get('mobileNumber')?.dirty || signupForm.get('mobileNumber')?.touched)">
+                <div class="error" *ngIf="signupForm.get('mobileNumber')?.errors?.['required']"> Mobile number is required.</div>
+                <!-- <div class="error" *ngIf="signupForm.get('mobileNumber')?.errors?.['mobileNumber']">Invalid mobileNumber format.</div> -->
+              </div>
+            </div>
+            <div class="col-md-12 input-groupp mt-4 relative">
+              <div class="d-md-flex align-items-center justify-content-between col-md-12">
+                <label> Passsword <span class="error"> * </span> </label>
+              </div>
+              <input [type]="eyesOffOn ? 'password' : 'text' " class="col-md-12 mb-2" placeholder="Enter password"
+                formControlName="loginPassword" required />
+                <!--  -->
+                <div class="error" *ngIf="signupForm.get('loginPassword')?.invalid && (signupForm.get('loginPassword')?.dirty || signupForm.get('loginPassword')?.touched)">
+                  <div class="error" *ngIf="signupForm.get('loginPassword')?.errors?.['required']">Password is required</div>
+                  <div class="error" *ngIf="signupForm.get('loginPassword')?.errors?.['minlength']">Password must be at least 6 characters long</div>
+                </div>
+                <!--  -->
+              <div class="eyes-imgs absolute">
+                <img *ngIf="eyesOffOn" class="pointer" (click)="showAndHidePassword()"
+                  src="../../../assets/images/eye-off.svg" alt="eyes" />
+                <img *ngIf="!eyesOffOn" class="pointer" (click)="showAndHidePassword()"
+                  src="../../../assets/images/eye-on.svg" alt="eyes" />
+              </div>
+            </div>
+            <div class="login_btn mt-3 text-center d-flex align-items-center justify-content-center g12">
+              <button type="submit" class="pink_btn"> Sign Up </button>
+              <!-- <i class="bi bi-check2"></i> -->
+              <!-- [disabled]="signupForm.invalid" -->
+              <!-- <div class="continue_with_button text-center">
+                <button type="button" class="social_login_buttons" > <img src="../../../assets/images/Google.svg" alt="google icon" />
+                </button>
+              </div> -->
+            </div>
+          </form>
+
+        </div>
+
+          <!-- <p class="my-5 grey fs14 fw400 text-center"> or continue with </p> -->
+
+
+
+          <div class="signUp_linee my-5">
+            <h1 class="fw400 fs14 text-center">
+              <span class="pink ms-3 pointer sign-upp" [routerLink]="'/login'" (click)="scrollToTop()"> Back to Login </span> </h1>
+              <!-- (click)="showSIGNUPform()" -->
+            </div>
+
+      </div>
+      <div class="col-md-5">
+        <img src="../../../assets/images/Frame.svg" alt="char" style="width:90%" />
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- <div class="col-md-12 input-groupp">
+  <label class="col-md-12"> Email <span class="error"> * </span> </label>
+  <input type="text" id="email" class="col-md-12 mb-2" placeholder="Enter email" [(ngModel)]="mobileNumber">
+<button> Get Otp </button>
+</div>
+<div class="col-md-12 input-groupp">
+  <label class="col-md-12"> otp <span class="error"> * </span> </label>
+  <input type="text" id="email" class="col-md-12 mb-2" placeholder="Enter email" [(ngModel)]="otpotp">
+<button> Get Otp </button>
+</div> -->
+<!-- <button> verify otp </button> -->
+
+

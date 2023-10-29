@@ -1,0 +1,23 @@
+.side-nav-main{
+  .side-list-main{
+    ul{
+      li{
+        margin-top: 10px;
+        &.active{
+          background: #d885a3;
+          color: #fff;
+          border-radius: 14px;
+        }
+        &:hover{
+          background: #d885a3;
+          color: #fff;
+          border-radius: 14px;
+        }
+      }
+    }
+  }
+}
+li{
+  font-size: 14px !important;
+  font-weight: 500;
+}

@@ -1,0 +1,35 @@
+<div class="loader" *ngIf="showLoader"></div>
+<section *ngIf="articlesMain">
+<div class="pointer pink d-flex align-items-center width-fit" [routerLink]="'/home'">
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 1024 1024"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="#d885a3"
+      d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+    />
+    <path
+      fill="#d885a3"
+      d="m237.248 512l265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+    />
+  </svg>
+  <span class="fs18 fw500 ms-2"> Home </span>
+</div>
+
+<div class="mt-5">
+  <ng-container *ngFor="let x of articlesBigArray">
+    <section class="articles-main p32 white back_pink br40">
+      <h1> Author : {{ x.author }} </h1>
+      <p class="mt-3 fw600 lh20"> {{x.title}} </p>
+      <p class="my-3 fw500 lh20 fs12"> {{x.description}} </p>
+      <img class="w-100" src="{{x.urlToImage}}" alt="image" />
+      <h6 class="fw400 fs14 my-3"> Published at : <span> {{x.publishedAt | slice:0:10}} </span>  </h6>
+      <a href="{{x.url}}" class="white" target="_blank"> Know More </a>
+    </section>
+  </ng-container>
+</div>
+
+</section>

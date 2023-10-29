@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: #f3f6fd;
+  padding: 30px;
+  .trending-component {
+    position: sticky !important;
+    top: 100px;
+  }
+}
+.show{
+  display: block !important;
+}
+.hide{
+  display: none !important;
+}

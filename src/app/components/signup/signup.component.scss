@@ -1,0 +1,31 @@
+.signup_main {
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(0, 131, 176, 0.37) 0%,
+  //   rgba(219, 0, 158, 0.32) 100%
+  // );
+  .login_form_card {
+    filter: drop-shadow(4px 4px 70px rgba(0, 0, 0, 0.1));
+    padding: 50px;
+  }
+}
+
+.eyes-imgs {
+  right: 20px;
+  top: 36px;
+}
+.social_login_buttons {
+  border-radius: 40px;
+  border: 1px solid #6096b4;
+  background: #fff;
+  padding: 14px 50px;
+  &:focus {
+    border: 1px solid #6096b4;
+    outline: 0;
+  }
+}
+.sign-upp {
+  &:hover {
+    text-decoration: underline;
+  }
+}
