@@ -37,18 +37,18 @@
         <app-side-nav></app-side-nav>
       </div>
     </ng-container>
-      <div class="mainn-layoutt d-flex" [ngClass]="{container: !showFooter}">
-        <app-main-layout></app-main-layout>
+      <div class="mainn-layoutt d-flex col-md-7" [ngClass]="{container: !showFooter}">
+        <app-main-layout class="w-100 mx-2"></app-main-layout>
+      </div>
       <ng-container *ngIf="showFooter">
-        <div class="col-md-3" >
+        <div class="col-md-3 sticky-side-nav" >
         <app-trendings></app-trendings>
       </div>
     </ng-container>
-      </div>
+
     </div>
   </div>
 </div>
 <div *ngIf="showFooter">
-  <!-- Include your footer component here -->
   <app-footer></app-footer>
 </div>

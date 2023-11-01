@@ -2,7 +2,7 @@
   <div class="container-fluid d-flex">
     <div class="app-header-left justify-content-between">
       <!-- <p class="fw700 fs20"> -->
-        <img src="../../../assets/images/logo.svg" alt="logo" style="width:7%; border-radius:50%" />
+        <img class="pointer" [routerLink]="'/home'" src="../../../assets/images/logo.svg" alt="logo" style="width:7%; border-radius:50%" />
       <!-- </p> -->
       <div class="search-wrapper">
         <input
@@ -50,8 +50,8 @@
 
       <button class="profile-btn relative">
         <div class="d-flex align-items-center" [routerLink]="'/profile'">
-          <img src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
-          <span>Aybüke C.</span>
+          <img src="../../../assets/images/WhatsApp Image 2023-06-25 at 18.44.19.jpg" alt="profile img" />
+          <span>N P</span>
         </div>
         <div class="logout-button absolute">
           <button class="pink-border-btn" (click)="onLogOut()">Logout</button>
